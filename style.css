@@ -4,7 +4,7 @@
     padding: 0;
 }
 body{
-    background-color: #587778;
+    background: #fff;
     text-align: center;
 }
 .msg-container{
@@ -25,61 +25,96 @@ body{
     font-weight: 800;
 }
 h1{
-    margin-top: 50px;
-    font-size: 30px;
-    text-transform: uppercase;
-    color: #9fa74e;
+    margin: 50px;
+    font-size: 40px;
+
+    color:"black"; 
+}
+#headin span:nth-child(1){
+    color: rgb(44, 146, 71);
+}
+#headin span:nth-child(2){
+    color: rgb(57, 87, 193);
+}
+#headin span:nth-child(3){
+    color: red;  
 }
 #new-btn {
-    color: rgb(62, 168, 159);
-    background-color: #9cca7f;
+    color: rgb(8, 8, 8);
+    background-color: rgb(216, 208, 200);
     border-radius: 10px;
-    padding: 15px;
+    padding: 10px 15px;
     cursor: pointer;
     border: none;
-    font-size: 20px;
+    font-size: 15px;
 }
 
 #new-btn:hover {
-    background-color: #9bbf85;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    background-color: #a7a5a5;
+    box-shadow: 0 0 5px rgba(87, 84, 84, 0.27);
 }
-
 #reset-btn {
-    color: rgb(62, 168, 159);
-    background-color: #9cca7f;
+    color: rgb(8, 8, 8);
+    background-color: rgb(216, 208, 200);
     border-radius: 10px;
-    padding: 15px;
+    padding: 10px 15px;
     cursor: pointer;
     border: none;
-    font-size: 20px;
+    font-size: 15px;
 }
 
 #reset-btn:hover {
-    background-color: #9bbf85;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    background-color: #a7a5a5;
+    box-shadow: 0 0 5px rgba(87, 84, 84, 0.27);
 }
-
-.container{
-    height: 70vh;
+.gameContainer{
     display: flex;
     justify-content: center;
-    margin-top: 2rem;
+}
+.container{
+    display: grid;
+    grid-template-rows: repeat(3, 10vw);
+    grid-template-columns: repeat(3, 10vw);
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+}
+#navbar{
+    padding: 10px;
+    font-size: 20px;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    right: 0;
+    top: 0;
+    margin: 20px;
+    margin-right: 20px;
+}
+#togglebutton {
+    font-size: 40px; 
+    color: rgb(17, 16, 16); 
+    cursor: pointer;  
+  }
+.box{
+    border: 4px solid black;
+    font-size: 8vw;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
     align-items: center;
 }
-.game-box{
-    height: 60vmin;
-    width: 60vmin;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1vmin;
-    justify-content: center;
+.toggle{
+    border: 4px solid white ;
 }
-.box{
-    height: 18vmin;
-    width: 18vmin;
-    border-radius: 15px;
-    border: none;
-    font-size: 4rem;
-    color: brown;
+.br-0{
+    border-right: none;
+}
+.bl-0{
+    border-left: none;
+}
+.bt-0{
+    border-top: none;
+}
+.bb-0{
+    border-bottom: none;
 }
