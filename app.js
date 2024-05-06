@@ -134,7 +134,7 @@ const resetGame = () => {
 };
 
 const gameDraw = () => {
-  msg.innerText = `Game was a Draw.`;
+  msg.innerText = `Game was Draw.`;
   msgContainer.classList.remove("hide");
 };
 
