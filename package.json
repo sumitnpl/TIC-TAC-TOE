@@ -1,0 +1,22 @@
+{
+  "name": "tictac-toe",
+  "version": "1.0.0",
+  "description": "tic-tac-toe game",
+  "main": "app.js",
+  "scripts": {
+    "test": "npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sumitnpl/TIC-TAC-TOE-Game.git"
+  },
+  "keywords": [
+    "tic-tac-toe"
+  ],
+  "author": "sumitnpl",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sumitnpl/TIC-TAC-TOE-Game/issues"
+  },
+  "homepage": "https://github.com/sumitnpl/TIC-TAC-TOE-Game#readme"
+}
