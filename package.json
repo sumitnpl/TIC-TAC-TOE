@@ -2,7 +2,7 @@
   "name": "tictac-toe",
   "version": "1.0.0",
   "description": "tic-tac-toe game",
-  "main": "app.js",
+  "main": "index.html",
   "scripts": {
     "test": "npm start",
     "start": "parcel ./*.html",
