@@ -4,7 +4,9 @@
   "description": "tic-tac-toe game",
   "main": "app.js",
   "scripts": {
-    "test": "npm start"
+    "test": "npm start",
+    "start": "parcel ./*.html",
+    "build": "parcel build ./*.html"
   },
   "repository": {
     "type": "git",
@@ -18,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/sumitnpl/TIC-TAC-TOE-Game/issues"
   },
-  "homepage": "https://github.com/sumitnpl/TIC-TAC-TOE-Game#readme"
+  "homepage": "https://github.com/sumitnpl/TIC-TAC-TOE-Game#readme",
+  "devDependencies": {
+    "parcel": "^2.12.0"
+  }
 }
