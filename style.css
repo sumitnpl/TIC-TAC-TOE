@@ -29,15 +29,6 @@ h1{
     font-size: 45px;
     color:"black"; 
 }
-#headin span:nth-child(1){
-    color: rgb(44, 146, 71);
-}
-#headin span:nth-child(2){
-    color: rgb(57, 87, 193);
-}
-#headin span:nth-child(3){
-    color: red;  
-}
 #new-btn {
     color: rgb(8, 8, 8);
     background-color: rgb(216, 208, 200);
@@ -78,18 +69,22 @@ h1{
     font-family: 'Roboto', sans-serif;
     position: relative;
 }
-#navbar{
-    padding: 10px;
-    font-size: 28px;
-    position: fixed;
+bar{
     display: flex;
+    flex-direction: row;
+    justify-content: end;
+    gap: 20%;
+    margin-right: 50px;
+}
+#navbar{
+    display: flex;
+    flex-direction: row;
     align-items: center;
+    justify-content: end;
     gap: 50px;
-    right: 0;
-    top: 0;
-    margin: 20px;
-    margin-right: 80px;
-    margin-top: 35px;
+}
+#timehere{
+    font-size: 22px;
 }
 #togglebutton {
     font-size: 45px;
@@ -119,4 +114,91 @@ h1{
 }
 .bb-0{
     border-bottom: none;
+}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    bar{
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 10%;
+    }
+    #headin{
+        align-items: center; 
+        font-size: 1.9rem;
+    }
+    #navbar{
+        flex-direction: column;
+    }
+    .gameContainer{
+        margin-top: 2.3rem;
+        justify-content: center;
+           
+    }
+    .box{
+        font-size: 14vw;
+    }
+    .container{
+        display: grid;
+        grid-template-rows: repeat(3, 17vw);
+        grid-template-columns: repeat(3, 17vw);
+    }
+    #msg{
+        font-size: 1.8rem;
+    }
+
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    bar{
+        flex-direction: column;
+        justify-content: center;
+        
+    }
+    #headin{
+        align-items: center;
+        font-size: 2.4rem;
+    }
+    #navbar{
+        flex-direction: row;
+        justify-content: center;
+        font-size: 3.2rem;
+    }
+    .gameContainer{
+        margin-top: 2.5rem;
+        margin-right: 50px;
+        margin-bottom: 3.8rem;
+    }
+    .box{
+        font-size: 18vw;
+    }
+    .container{
+        display: grid;
+        grid-template-rows: repeat(3, 20vw);
+        grid-template-columns: repeat(3, 20vw);
+    }
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    bar{
+        flex-direction: row;
+        margin-left: 35%;
+    }
+    #headin{
+        font-size: 2.2rem;
+    }
+    #navbar{
+        flex-direction: row;
+        font-size: 2.0rem;
+    }
+    .box{
+        font-size: 7vw;
+    }
+    .container{
+        display: grid;
+        grid-template-rows: repeat(3, 9vw);
+        grid-template-columns: repeat(3, 9vw);
+    }
 }
