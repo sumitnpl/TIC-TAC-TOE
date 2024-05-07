@@ -140,5 +140,3 @@ const gameDraw = () => {
 
 resetBtn.addEventListener("click", resetGame);
 newGameBtn.addEventListener("click", resetGame);
-
-
