@@ -85,8 +85,8 @@ const winPatterns = [
 ];
 
 boxes.forEach((box) => {
-  box.addEventListener("click", () => {
-    if (box.innerText = " ") { 
+  box.addEventListener("click",() => {
+    if (box.innerText === "") { 
       if (turnO) {
         box.innerText = "O";
         box.style.color = "green";
