@@ -125,7 +125,11 @@ body{
     color: rgb(17, 16, 16); 
     cursor: pointer;  
   }
-
+  @media only screen and (max-width: 600px){
+    #msg{
+        font-size: 6.0rem;
+    }
+  }
 /* Extra small devices (phones, 600px and down)
 @media only screen and (max-width: 600px) {
     bar{
