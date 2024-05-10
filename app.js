@@ -162,10 +162,11 @@ const resetGame = () => {
 };
 
 const gameDraw = () => {
-  msg.innerText = `Game was Draw`;
+  msg.innerText = `Game was draw`;
   msg.style.fontSize = "4rem";
-  msg.style.fontFamily = "Gluten, cursive"
-  msg.style.textTransform = "capitalize"
+  msg.style.marginTop = "4.6rem"
+  msg.style.fontFamily = "Mochiy Pop One";
+  msg.style.textTransform = "none"
   winnerText.style.display = "none"
   msgContainer.classList.remove("hide");
   game.classList.add("gone");
