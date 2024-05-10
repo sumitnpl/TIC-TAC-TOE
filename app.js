@@ -136,10 +136,10 @@ const checkWinner = () => {
                   angle: randomInRange(60, 125),
                   spread: randomInRange(120, 180),
                   particleCount: randomInRange(400, 800),
-                  origin: { y: 0.7}
+                  origin: { y: randomInRange(0.5,0.7)}
                 });
               }, i * 2000); // Adjust the delay (in milliseconds) between each iteration
-          }
+            }
           trophy.style.display = "flex";
 
          msgContainer.classList.remove("hide");
@@ -153,6 +153,7 @@ const checkWinner = () => {
 const resetGame = () => {
   turnO = true;
   count = 0;
+  stop = 1;
   boxes.forEach((box)=>{
     box.innerText = "";
   });

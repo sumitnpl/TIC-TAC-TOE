@@ -23,7 +23,7 @@ body{
     gap: 10%;
 }
 .msg-container{
-    height: 50vh;
+    height: 43.2vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -39,12 +39,18 @@ body{
 .gone{
     display: none;
 }
+#winnertext{
+    color: #d67400;
+    text-transform: uppercase;
+    font-size: 2.4rem;
+    margin-bottom: -5.1rem;
+    font-weight: 800;
+}
 #msg{
     color: rgb(87, 200, 140);
     text-transform: lowercase;
-    font-family: myFont1;
+    font-family: "Gluten", cursive;
     font-size: 12.0rem;
-    margin-bottom: 0px;
 }
 #res-btn{
     cursor: pointer;
@@ -54,7 +60,7 @@ body{
     display: flex;
     justify-content: center;
     transition: 0.2s all;
-    height: 36vh;
+    height: 50vh;
 }
 .container{
     display: grid;
@@ -82,6 +88,7 @@ body{
     flex-direction: row;
     align-items: center;
     justify-content: end;
+    position: sticky;
     gap: 50px;
 }
 #timehere{
@@ -143,12 +150,17 @@ body{
         justify-content: center;
     }
     #winnertext{
-        font-size: 1.5rem;
+        font-size: 2.0rem;
+        margin-bottom: -8rem;
     }
     .gameContainer{
         margin-top: 0rem;
+        height: 50vh;
         justify-content: center; 
         height: 8vh;
+    }
+    .msg-container{
+        height: 39vh;
     }
     .box{
         font-size: 24vw;
@@ -164,6 +176,7 @@ body{
     #trophy{
         color: #d67400;
         font-size: 6.8rem;
+        margin-left: 15px;
     }
 
 }
@@ -193,6 +206,9 @@ body{
     }
     .box{
         font-size: 18vw;
+    }
+    #res-btn{
+        font-size: 38px;
     }
     .container{
         display: grid;
