@@ -3,7 +3,6 @@
     font-family: myFont1;
     src:url(ZeykoCrew-rvxq9.ttf);
 }
-@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Gluten:wght@100..900&family=Merienda:wght@800&family=Mochiy+Pop+One&family=Zeyada&display=swap');
 *{
     margin: 0;
@@ -11,7 +10,6 @@
 }
 body{
     background: #f8f7fe;
-    font-family: "Shadows Into Light", cursive;
     text-align: center;  
 }
 .main-container{
