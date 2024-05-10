@@ -127,8 +127,29 @@ body{
   }
   @media only screen and (max-width: 600px){
     #msg{
-        font-size: 6.0rem;
+        font-size:6.0rem;
     }
+    .container{
+        font-family: "Gluten",sans-serif;
+    }
+    #winnertext{
+        font-family: "Gluten",sans-serif;
+    }
+    .game-container{
+        min-height: 60vh;
+    }
+    .msg-container{
+        height: 60vh;
+    }
+    #trophy{
+        margin-right: 2rem;
+    }
+    #res-btn{
+        font-size: 3rem;
+    }
+    #togglebutton {
+        font-size: 3.5rem;
+      }
   }
 /* Extra small devices (phones, 600px and down)
 @media only screen and (max-width: 600px) {
