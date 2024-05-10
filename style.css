@@ -125,6 +125,7 @@ body{
     color: rgb(17, 16, 16); 
     cursor: pointer;  
   }
+  /* Extra small devices (phones, 600px and down) */
   @media only screen and (max-width: 600px){
     #msg{
         font-size:6.0rem;
@@ -141,6 +142,9 @@ body{
     .msg-container{
         height: 60vh;
     }
+    #msg{
+        font-size: 8rem;
+    }
     #trophy{
         margin-right: 2rem;
     }
@@ -150,6 +154,22 @@ body{
     #togglebutton {
         font-size: 3.5rem;
       }
+      .container{
+        grid-template-rows: repeat(3, 14vh);
+        grid-template-columns: repeat(3, 14vh);
+    }
+    .box{
+        font-size: 6rem;
+    }
+  }
+  @media only screen and (min-width: 600px){
+    #res-btn{
+        font-size: 3.8rem;
+    }
+    #togglebutton {
+        font-size: 3.8rem;
+      }
+
   }
 /* Extra small devices (phones, 600px and down)
 @media only screen and (max-width: 600px) {
