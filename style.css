@@ -21,7 +21,7 @@ body{
     gap: 10%;
 }
 .msg-container{
-    height: 43.2vh;
+    height: 46.2vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -58,7 +58,6 @@ body{
     display: flex;
     justify-content: center;
     transition: 0.2s all;
-    height: 50vh;
 }
 .container{
     display: grid;
@@ -156,7 +155,6 @@ body{
         margin-top: 0rem;
         height: 50vh;
         justify-content: center; 
-        height: 8vh;
     }
     .msg-container{
         height: 39vh;
@@ -192,6 +190,10 @@ body{
         align-items: center;
         font-size: 2.4rem;
     }
+    #winnertext{
+        margin-bottom: -2rem;
+        font-size: 3rem;
+    }
     #navbar{
         flex-direction: row;
         justify-content: center;
@@ -199,7 +201,10 @@ body{
     }
     .gameContainer{
         margin-top: 2.5rem;
-        margin-bottom: 3.8rem;
+        margin-bottom: 2.8rem;
+    }
+    .msg-container{
+        height: 53.4vh;
     }
     #timehere{
         font-size: 1.8rem;
@@ -235,12 +240,15 @@ body{
         font-size: 2.0rem;
     }
     .box{
-        font-size: 8vw;
+        font-size: 10vw;
     }
     .container{
         display: grid;
-        grid-template-rows: repeat(3, 10vw);
-        grid-template-columns: repeat(3, 10vw);
+        grid-template-rows: repeat(3, 13vw);
+        grid-template-columns: repeat(3, 13vw);
+    }
+    .msg-container{
+        height: 53.2vh;
     }
 }
 @media only screen and (min-width: 1440px) {
