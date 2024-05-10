@@ -1,79 +1,81 @@
 
+@font-face{
+    font-family: myFont1;
+    src:url(ZeykoCrew-rvxq9.ttf);
+}
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gluten:wght@100..900&family=Merienda:wght@800&family=Mochiy+Pop+One&family=Zeyada&display=swap');
 *{
     margin: 0;
     padding: 0;
 }
 body{
-    background: #fff;
-    text-align: center;
+    background: #f8f7fe;
+    font-family: "Shadows Into Light", cursive;
+    text-align: center;  
 }
 .main-container{
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+    gap: 10%;
 }
 .msg-container{
-    height: 100vh;
+    height: 50vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    gap: 1.5rem;
+}
+#trophy{
+    color: #d67400;
+    font-size: 140px;
+    margin-top: -2.8rem;
 }
 .hide{
     display: none;
 }
+.gone{
+    display: none;
+}
 #msg{
-    color: rgb(193, 137, 34);
-    text-transform: uppercase;
-    font-size: 2rem;
-    font-weight: 800;
+    color: rgb(87, 200, 140);
+    text-transform: lowercase;
+    font-family: myFont1;
+    font-size: 12.0rem;
+    margin-bottom: 0px;
 }
-h1{
-    /* margin: 50px; */
-    font-size: 45px;
-    color:"black"; 
-}
-#new-btn {
-    color: rgb(8, 8, 8);
-    background-color: rgb(216, 208, 200);
-    border-radius: 10px;
-    padding: 15px 18px;
+#res-btn{
     cursor: pointer;
-    font-weight: 500;
-    border: none;
-    font-size: 20px;
-}
-
-#new-btn:hover {
-    background-color: #a7a5a5;
-    box-shadow: 0 0 5px rgba(87, 84, 84, 0.27);
-}
-#reset-btn {
-    color: rgb(8, 8, 8);
-    background-color: rgb(160, 160, 157);
-    border-radius: 10px;
-    padding: 12px 18px;
-    cursor: pointer;
-    border: none;
-    font-size: 20px;
-}
-
-#reset-btn:hover {
-    background-color: #676565;
-    box-shadow: 0 0 5px rgba(87, 84, 84, 0.27);
+    color: white;
 }
 .gameContainer{
     display: flex;
     justify-content: center;
+    transition: 0.2s all;
+    height: 36vh;
 }
 .container{
     display: grid;
     grid-template-rows: repeat(3, 10vw);
     grid-template-columns: repeat(3, 10vw);
-    font-family: 'Roboto', sans-serif;
+    font-family: "Gluten", cursive;
     position: relative;
+}
+  #headin span:nth-child(1){
+    color: #ff686b;
+    /* font-size: 2rem; */
+  }
+  #headin span:nth-child(2){
+    color: #84dcc6;
+    /* font-size: 2rem; */
+  }
+   #headin{
+    font-size: 100px;
+    font-weight: 400;
+    letter-spacing: 8px;
+    font-family: myFont1;
 }
 #navbar{
     display: flex;
@@ -91,19 +93,9 @@ h1{
     color: rgb(17, 16, 16); 
     cursor: pointer;  
   }
-  #headin{
-    text-transform: uppercase;
-  }
-  #headin span:nth-child(1){
-    color: brown;
-    font-size: 4rem;
-  }
-  #headin span:nth-child(2){
-    color: green;
-    font-size: 4rem;
-  }
+
 .box{
-    border: 6px solid black;
+    border: 6px solid #47494b;
     font-size: 8vw;
     cursor: pointer;
     display: flex;
@@ -111,7 +103,7 @@ h1{
     align-items: center;
 }
 .toggle{
-    border: 4px solid white ;
+    border: 4px solid #f8f7fe ;
 }
 .br-0{
     border-right: none;
@@ -137,33 +129,41 @@ h1{
         font-size: 1.9rem;
     }
     #headin span:nth-child(1){
-        color: brown;
         font-size: 3rem;
       }
       #headin span:nth-child(2){
-        color: green;
         font-size: 3rem;
       }
+
+    #res-btn{
+        font-size: 40px;
+    }
     #navbar{
         flex-direction:row;
         justify-content: center;
-        margin-top: 5.6rem;
+    }
+    #winnertext{
+        font-size: 1.5rem;
     }
     .gameContainer{
-        margin-top: 2.3rem;
-        justify-content: center;
-           
+        margin-top: 0rem;
+        justify-content: center; 
+        height: 8vh;
     }
     .box{
-        font-size: 14vw;
+        font-size: 24vw;
     }
     .container{
         display: grid;
-        grid-template-rows: repeat(3, 17vw);
-        grid-template-columns: repeat(3, 17vw);
+        grid-template-rows: repeat(3, 28vw);
+        grid-template-columns: repeat(3, 28vw);
     }
     #msg{
-        font-size: 1.8rem;
+        font-size: 15.8rem;
+    }
+    #trophy{
+        color: #d67400;
+        font-size: 6.8rem;
     }
 
 }
@@ -189,15 +189,15 @@ h1{
         margin-bottom: 3.8rem;
     }
     #timehere{
-        font-size: 2.0rem;
+        font-size: 1.8rem;
     }
     .box{
         font-size: 18vw;
     }
     .container{
         display: grid;
-        grid-template-rows: repeat(3, 20vw);
-        grid-template-columns: repeat(3, 20vw);
+        grid-template-rows: repeat(3, 18vw);
+        grid-template-columns: repeat(3, 18vw);
     }
 
 }

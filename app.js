@@ -1,10 +1,12 @@
 let boxes = document.querySelectorAll(".box");
-let resetBtn = document.querySelector("#reset-btn");
-let newGameBtn = document.querySelector("#new-btn");
+let resetBtn = document.querySelector("#res-btn");
+let game = document.querySelector(".game-container")
 let msgContainer = document.querySelector(".msg-container");
+let trophy = document.querySelector("#trophy")
 let msg = document.querySelector("#msg");
 let toggle = document.querySelector("#togglebutton")
 let timezoner = document.querySelector("#timehere")
+let winnerText = document.querySelector("#winnertext")
 const body = document.body;
 let isBlack = true;
 let head = document.querySelector("#headin")
@@ -24,21 +26,23 @@ function updateTime() {
  if (hour >= 18 || hour < 6){
   // for dark
   isBlack = true;
-  body.style.background = "#333537";
+  body.style.background = " #333537";
   timezoner.style.color = "#c0db6c"
-  head.style.color = "white";
+  resetBtn.style.color = "#C2CCCE";
+  head.style.color = "#C2CCCE";
   toggle.classList.add("fa", "fa-toggle-off");
   toggle.style.color = "#C2CCCE";
   boxes.forEach(box => {
    box.classList.add("toggle")
     })
 }else{
-  body.style.background = "#c4c4c8";
-    head.style.color = "black";
+  body.style.background = "#f8f7fe";
+    head.style.color = "#333537";
     timezoner.style.color = "#262726"
+    resetBtn.style.color = "#C2CCCE";
     isBlack = false;
     toggle.classList.add("fa", "fa-toggle-on");
-    toggle.style.color = "#0096FF";
+    toggle.style.color = "#C2CCCE";
     boxes.forEach(box => {
       box.classList.remove("toggle")
     });
@@ -60,12 +64,12 @@ toggle.addEventListener("click", () => {
     });
   } else {
     // for day
-    body.style.background = "#c4c4c8";
+    body.style.background = "#f8f7fe";
     head.style.color = "black";
     isBlack = false;
     toggle.classList.remove("fa", "fa-toggle-off");
     toggle.classList.add("fa", "fa-toggle-on");
-    toggle.style.color = "#0096FF";
+    toggle.style.color = "#C2CCCE";
     hour = 8;
     boxes.forEach(box => {
       box.classList.remove("toggle")
@@ -89,11 +93,11 @@ boxes.forEach((box) => {
     if (box.innerText === "") { 
       if (turnO) {
         box.innerText = "O";
-        box.style.color = "green";
+        box.style.color = "#84dcc6";
         turnO = false;
       } else {
         box.innerText = "X";
-        box.style.color = "brown";
+        box.style.color = " #ff686b";
         turnO = true;
       } 
       count++;
@@ -104,6 +108,7 @@ boxes.forEach((box) => {
     }
   });
 });
+
 
 const checkWinner = () => {
   for (let pattern of winPatterns) {
@@ -116,8 +121,29 @@ const checkWinner = () => {
 
     if (pos1Val != "" && pos2Val != "" && pos3Val != "") {
       if (pos1Val === pos2Val && pos2Val === pos3Val) {
-        msg.innerText = `Congratulations, Winner is ${pos1Val}`;
+        if(pos1Val == "X"){
+          msg.style.color= "#ff686b";
+        }else{
+          msg.style.color ="#84dcc6";
+        }
+        msg.innerText = `${pos1Val}`;
+          for (let i = 0; i < 3; i++) {
+              setTimeout(function() {
+                function randomInRange(min, max) {
+                  return Math.random() * (max - min) + min;
+                }
+                confetti({
+                  angle: randomInRange(60, 125),
+                  spread: randomInRange(120, 180),
+                  particleCount: randomInRange(400, 800),
+                  origin: { y: 0.7}
+                });
+              }, i * 2000); // Adjust the delay (in milliseconds) between each iteration
+          }
+          trophy.style.display = "flex";
+
          msgContainer.classList.remove("hide");
+         game.classList.add("gone");
         return true;
       }
     }
@@ -131,12 +157,20 @@ const resetGame = () => {
     box.innerText = "";
   });
   msgContainer.classList.add("hide");
+  game.classList.remove("gone");
 };
 
 const gameDraw = () => {
-  msg.innerText = `Game was Draw.`;
+  msg.innerText = `Game was Draw`;
+  msg.style.fontSize = "4rem";
+  msg.style.fontFamily = "Gluten, cursive"
+  msg.style.textTransform = "capitalize"
+  winnerText.style.display = "none"
   msgContainer.classList.remove("hide");
+  game.classList.add("gone");
+  trophy.style.display = "none";
 };
 
 resetBtn.addEventListener("click", resetGame);
-newGameBtn.addEventListener("click", resetGame);
+
+
