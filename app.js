@@ -157,7 +157,7 @@ const checkWinner = () => {
           trophy.style.display = "flex";
 
          msgContainer.classList.remove("hide");
-         game.classList.add("gone");
+         game.classList.add("hide");
         return true;
       }
     }
@@ -172,7 +172,7 @@ const resetGame = () => {
     box.innerText = "";
   });
   msgContainer.classList.add("hide");
-  game.classList.remove("gone");
+  game.classList.remove("hide");
 };
 
 const gameDraw = () => {
@@ -183,7 +183,7 @@ const gameDraw = () => {
   msg.style.textTransform = "none"
   winnerText.style.display = "none"
   msgContainer.classList.remove("hide");
-  game.classList.add("gone");
+  game.classList.add("hide");
   trophy.style.display = "none";
 };
 
