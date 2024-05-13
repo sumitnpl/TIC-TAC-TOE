@@ -123,23 +123,37 @@ const checkWinner = () => {
       if (pos1Val === pos2Val && pos2Val === pos3Val) {
         if(pos1Val == "X"){
           msg.style.color= "#ff686b";
+          var colors = ['#ff686b', '#ff686b'];
         }else{
           msg.style.color ="#84dcc6";
+          var colors = ['#84dcc6', '#84dcc6'];
         }
         msg.innerText = `${pos1Val}`;
-          for (let i = 0; i < 3; i++) {
-              setTimeout(function() {
-                function randomInRange(min, max) {
-                  return Math.random() * (max - min) + min;
-                }
-                confetti({
-                  angle: randomInRange(60, 125),
-                  spread: randomInRange(120, 180),
-                  particleCount: randomInRange(400, 800),
-                  origin: { y: randomInRange(0.5,0.7)}
-                });
-              }, i * 2000); // Adjust the delay (in milliseconds) between each iteration
-            }
+        var end = Date.now() + (1 * 500);
+
+// go Buckeyes!
+// var colors = ['#bb0000', '#ffffff'];
+
+(function frame() {
+  confetti({
+    particleCount: 6,
+    angle: 60,
+    spread: 55,
+    origin: { x: 0},
+    colors: colors
+  });
+  confetti({
+    particleCount: 6,
+    angle: 120,
+    spread: 55,
+    origin: { x: 1 },
+    colors: colors
+  });
+
+  if (Date.now() < end) {
+    requestAnimationFrame(frame);
+  }
+}());
           trophy.style.display = "flex";
 
          msgContainer.classList.remove("hide");
