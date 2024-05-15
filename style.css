@@ -1,197 +1,167 @@
-/* Font import */
+:root {
+  --body-color: #47494b;
+  --border-color: #f8f7fe;
+  --hover-color: #47494bbe;
+  --text-color: #fff;
+  --red-color: #ff686b;
+  --green-color: #84dcc6;
+}
+/* Import Font */
 @font-face {
-    font-family: myFont1;
-    src: url(ZeykoCrew-rvxq9.ttf);
+  font-family: appFont;
+  src: url(ZeykoCrew-rvxq9.ttf);
 }
-
-/* Basic reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
-/* Body styles */
 body {
-    background: #f8f7fe;
-    /* font-family: "Shadows Into Light", cursive; */
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh; /* Corrected typo from 100dvh to 100vh */
+  font-family: appFont;
+  background-color: var(--body-color);
+  transition: all 0.5s ease;
+}
+.red-color {
+  color: var(--red-color);
+}
+.green-color {
+  color: var(--green-color);
+}
+.hide {
+  display: none !important;
 }
 
-/* Main container */
-.main-container {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    align-items: center;
-    position: relative;
-}
-
-/* Heading styles */
-#headin{
-    font-size: 2.5rem;
-    font-weight: 300;
-    letter-spacing: 0.7rem;
-    font-family: myFont1;
-}
-#headin span:nth-child(1) {
-    color: #ff686b;
-}
-#headin span:nth-child(2) {
-    color: #84dcc6;
-}
-.container-wrapper{
-  height: 60vh;
-  aspect-ratio: 1/1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Game container styles */
-.game-container, .msg-container{
-    height: 100%;
-    width: 100%;
-    margin: auto;
-}
-
-/* Container (grid) styles */
 .container {
-  height: 100%;
-  width: 100%;
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-template-columns: 1fr 1fr 1fr;
-}
-
-/* Box styles */
-.box {
-    border: 6px solid #47494b;
-    font-family: "Gluten", cursive;
-    font-size: 5rem;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.hide{
-    display: none !important;
-}
-
-/* Box border styles */
-.toggle {
-    border: 4px solid #f8f7fe;
-}
-
-.br-0 {
-    border-right: none;
-}
-
-.bl-0 {
-    border-left: none;
-}
-
-.bt-0 {
-    border-top: none;
-}
-
-.bb-0 {
-    border-bottom: none;
-}
-.msg-container{
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  gap: 20px;
+  max-width: 55vh;
+  margin: auto;
+  color: var(--text-color);
+}
+.container .game-title {
+  font-size: 2.5rem;
+  font-weight: 300;
+  letter-spacing: 0.7rem;
+}
+
+.game-container {
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 55vh;
+  width: 55vh;
+}
+.game-container .game-over {
+  font-size: 3rem;
+  font-family: 'Mochiy Pop One', cursive;
+  font-weight: 500;
+  color: var(--red-color);
+}
+.game-container .board-container {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--border-color);
+}
+.game-container .game-board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 10px;
+  width: 100%;
+  height: 100%;
+}
+.game-container .game-board .box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 5rem;
+  font-weight: 700;
+  font-family: 'Gluten', cursive;
+  background-color: var(--body-color);
+  border: 6px solid 47494b;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.game-container .game-board .box:hover {
+  background-color: var(--hover-color);
+}
+.game-container .game-result {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: 10px;
   align-items: center;
   justify-content: space-between;
+}
+.game-container .game-result #winnertext {
+  font-family: 'Gluten', cursive;
+  color: #d67400;
+  width: fit-content;
+  text-transform: uppercase;
+  font-size: 3rem;
+}
+.game-container .game-result .winner-wrapper {
   position: relative;
+  height: 70%;
+  width: 70%;
 }
-.winner-wrapper{
-  position: relative;
+.game-container .game-result .winner-wrapper #trophy {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
 }
-#winnertext {
-    color: #d67400;
-    text-transform: uppercase;
-    font-family: "Gluten", cursive;
-    font-size: 3.0rem;
-    font-weight: 800;
+.game-container .game-result .winner-wrapper #winner {
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  font-size: 8rem;
+  transform: translate(-50%, -50%);
+  font-family: 'Gluten', cursive;
+  color: var(--green-color);
 }
-#msg{
-    color: rgb(87, 200, 140);
-    text-transform: lowercase;
-    font-family: "Gluten", cursive;
-    font-size: 10rem;
-    top: 35px;
-     /* width: 100%; */
-    height: fit-content;
-    position: absolute;
+.container .game-buttons {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+  justify-content: center;
 }
-
-/* Trophy styles */
-#trophy {
-    color: #d67400;
-    align-self: center;
-    object-fit: contain;
-    width: 60%;
-    height: 60%;
-    /* width: 16rem;
-    height: 8rem; */
+.game-buttons .fa {
+  font-size: 36px;
+  cursor: pointer;
 }
-
-/* Navbar styles */
-#navbar {
-    height: 15vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 50px;
-    width: 100%;
-}
-.icon{
-  /* height: 24px;  */
-  width: 24px;
-}
-.icon i{
-  height: 100% !important;
-  width: 100% !important; 
-}
-
-#res-btn {
-    cursor: pointer;
-    color: white;
+@media screen and (max-width: 768px) {
+  .container {
+    max-width: 100%;
+  }
+  .container .game-title {
     font-size: 2rem;
-}
-
-#timehere {
-    font-size: 22px;
-}
-
-#togglebutton {
-    font-size: 2.5em;
-    font-weight: 900;
-    color: rgb(17, 16, 16);
-    cursor: pointer;
-}
-@media screen and (max-width: 720px) {
-  .container-wrapper{
-    height: 40vh;
+    letter-spacing: 0.5rem;
   }
-  #msg{
-    top: 15%;
+  .game-container {
+    height: 45vh;
+    width: 45vh;
   }
-}
-@media screen and (max-width: 400px) {
-  .container-wrapper{
-    height: 35vh;
+  .game-container #game-over {
+    font-size: 2.5rem;
   }
-  #msg{
-    top: 10px;
-    font-size: 8rem;
+  .game-container .game-board .box {
+    font-size: 1.5rem;
   }
-  .box{
-    font-size: 4rem;
+  .game-container .game-result #winnertext {
+    font-size: 2.5rem;
+  }
+  .game-container .game-result .winner-wrapper #winner {
+    font-size: 6rem;
+  }
+  .game-buttons .fa {
+    font-size: 30px;
   }
 }

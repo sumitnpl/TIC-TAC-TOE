@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tic-Tac-Toe</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="icon" type="image/x-icon" href="favicon.png">
+    <link rel="icon" type="image/x-icon" href="favicon.png" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
@@ -14,47 +14,44 @@
       referrerpolicy="no-referrer"
     />
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
-    </head>
+  </head>
   <body>
-    <div class="main-container">
-      <!-- <main> -->
-      <div id="headin">t<span>x</span>c tac t<span>o</span>e</div>
-      <div class="container-wrapper">
+    <div class="container">
+      <div class="game-title">
+        <span id="title"
+          >t<span class="red-color">x</span>c tac t<span class="green-color"
+            >o</span
+          >e</span
+        >
+      </div>
       <div class="game-container">
-        <div class="container">
-          <div class="box bt-0 bl-0"></div>
-          <div class="box bt-0"></div>
-          <div class="box bt-0 br-0"></div>
-          <div class="box bl-0"></div>
-          <div class="box"></div>
-          <div class="box br-0"></div>
-          <div class="box bb-0 bl-0"></div>
-          <div class="box bb-0"></div>
-          <div class="box bb-0 br-0"></div>
+        <div class="board-container">
+          <div class="game-board">
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+          </div>
+        </div>
+        <span class="game-over hide"></span>
+        <div class="game-result hide">
+          <h3 id="winnertext">Winner</h3>
+          <div class="winner-wrapper">
+            <span id="winner"></span>
+            <img src="gift.png" id="trophy" alt="Trophy" />
+          </div>
         </div>
       </div>
-      <div class="msg-container hide">
-        <p id="winnertext">Winner</p>
-        <div class="winner-wrapper">
-        <p id="msg"></p>
-        <img src="gift.png" id="trophy"/> 
-      </div>
+      <div class="game-buttons">
+        <i class="fa fa-toggle-on" id="toggle-btn"></i>
+        <i class="fa fa-rotate-right" id="reset-btn" aria-hidden="true"></i>
       </div>
     </div>
-      <div id="navbar">
-        <div class="icon">
-        <i class="fa fa-toggle-off" id="togglebutton"></i>
-      </div>
-        <p id="timehere" style="color: #262726; display: none;">Time Zone Appears here</p>
-        <div class="icon">
-        <i class="fa fa-rotate-right" id="res-btn" aria-hidden="true"></i>
-      </div>
-        <!-- <img src="https://img.icons8.com/metro/26/restart.png"  alt="restart"/> -->
-      </div>
-      <!-- </main> -->
-    </div>
-
     <script src="app.js"></script>
   </body>
 </html>
-
