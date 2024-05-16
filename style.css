@@ -7,19 +7,8 @@
   --green-color: #84dcc6;
 }
 /* import font for modal  */
-@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
-@font-face {
-  font-family: MyFont;
-  src: url(CaviarDreams.ttf);
-}
-/* modal font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-
-
-
-
-/* Import Font */
 @font-face {
   font-family: appFont;
   src: url(ZeykoCrew-rvxq9.ttf);
@@ -114,8 +103,7 @@ body {
 }
 .game-container .game-result #winnertext {
   font-family: 'Gluten', cursive;
-  color: #d67400;
-  color: FFA600;
+  color: #FFA600;
   width: fit-content;
   text-transform: uppercase;
   font-size: 3rem;
@@ -149,6 +137,7 @@ body {
 .game-buttons .fa {
   font-size: 36px;
   cursor: pointer;
+  color: #C2CCCE;
 }
 
 /* css modal  */
@@ -164,10 +153,10 @@ body {
   z-index: 9999;
 }
 .modal-content{
-  /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
-  font-family: MyFont;
-  color: #787878;
-  font-size: 15px;
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 0.1px;
+  color: #a1a1a1;
+  font-size: 14px;
   font-weight: 400;
 }
 
@@ -176,7 +165,7 @@ body {
   margin: auto;
   padding: 20px 10px;
   border: 1px solid #888;
-  width: 80%;
+  width: 90%;
   max-width: 500px;
   border-radius: 5px;
   position: relative;

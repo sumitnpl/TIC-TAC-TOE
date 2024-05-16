@@ -17,26 +17,58 @@ let count = 0; //To Track Draw
 
 
 let d = new Date();
+let hour = d.getHours();
+// let hour = 8;
+updateTime();
+setInterval(updateTime, 1000);
+function updateTime(){
+  if(hour >= 18 || hour <6){
+    // for dark theme
+    console.log("dark theme if ")
+    root.style.setProperty('--body-color', '#47494b');
+    root.style.setProperty('--border-color', '#f8f7fe');
+    root.style.setProperty('--hover-color', '#47494bbe');
+    root.style.setProperty('--text-color', '#fff');
+    toggle.classList.remove('fa-toggle-on');
+    toggle.classList.add('fa-toggle-off');
+    darkTheme = true;
+  }else{
+    // for light theme
+    darkTheme = false;
+    root.style.setProperty('--body-color', '#f8f7fe');
+    root.style.setProperty('--border-color', '#47494b');
+    root.style.setProperty('--hover-color', '#f8f7febe');
+    root.style.setProperty('--text-color', '#000');
+    toggle.classList.remove('fa-toggle-off');
+    toggle.classList.add('fa-toggle-on');
+  }
+}
+
+
 
 // Theme Toggle
 toggle.addEventListener(
   'click',
   () => {
     if (darkTheme) {
+      // for light theme
       darkTheme = false;
+      hour = 8
       root.style.setProperty('--body-color', '#f8f7fe');
       root.style.setProperty('--border-color', '#47494b');
       root.style.setProperty('--hover-color', '#f8f7febe');
       root.style.setProperty('--text-color', '#000');
-      toggle.classList.remove('fa-toggle-on');
-      toggle.classList.add('fa-toggle-off');
+      toggle.classList.remove('fa-toggle-off');
+      toggle.classList.add('fa-toggle-on');
     } else {
+      // for dark theme
+      hour= 20
       root.style.setProperty('--body-color', '#47494b');
       root.style.setProperty('--border-color', '#f8f7fe');
       root.style.setProperty('--hover-color', '#47494bbe');
       root.style.setProperty('--text-color', '#fff');
-      toggle.classList.remove('fa-toggle-off');
-      toggle.classList.add('fa-toggle-on');
+      toggle.classList.remove('fa-toggle-on');
+      toggle.classList.add('fa-toggle-off');
       darkTheme = true;
     }
     // if (!isBlack) {
