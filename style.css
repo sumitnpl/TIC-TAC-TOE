@@ -18,7 +18,7 @@
 }
 body {
   font-family: appFont;
-  background-color: var(--body-color);
+  background-color: var(--body-color) !important;
   transition: all 0.5s ease;
 }
 .red-color {
@@ -31,18 +31,18 @@ body {
   display: none !important;
 }
 
-.container {
+.main-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  gap: 20px;
+  height: 100dvh;
+  gap: 40px;
   max-width: 55vh;
   margin: auto;
   color: var(--text-color);
 }
-.container .game-title {
+.main-container .game-title {
   font-size: 2.5rem;
   font-weight: 300;
   letter-spacing: 0.7rem;
@@ -86,13 +86,11 @@ body {
   font-weight: 700;
   font-family: 'Gluten', cursive;
   background-color: var(--body-color);
-  border: 6px solid 47494b;
+  /* border: 6px solid #47494b; */
   cursor: pointer;
   transition: all 0.5s ease;
 }
-.game-container .game-board .box:hover {
-  background-color: var(--hover-color);
-}
+
 .game-container .game-result {
   display: flex;
   flex-direction: column;
@@ -104,6 +102,7 @@ body {
 .game-container .game-result #winnertext {
   font-family: 'Gluten', cursive;
   color: #d67400;
+  color: FFA600;
   width: fit-content;
   text-transform: uppercase;
   font-size: 3rem;
@@ -127,18 +126,19 @@ body {
   font-family: 'Gluten', cursive;
   color: var(--green-color);
 }
-.container .game-buttons {
+.main-container .game-buttons {
   display: flex;
-  gap: 20px;
+  gap: 50px;
   margin-top: 20px;
   justify-content: center;
+  position: relative;
 }
 .game-buttons .fa {
   font-size: 36px;
   cursor: pointer;
 }
 @media screen and (max-width: 768px) {
-  .container {
+  .main-container {
     max-width: 100%;
   }
   .container .game-title {
@@ -163,5 +163,27 @@ body {
   }
   .game-buttons .fa {
     font-size: 30px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .main-container .game-title {
+    font-size: 2.8rem;
+    letter-spacing: 0.5rem;
+  }
+  .game-buttons .fa {
+    font-size: 40px;
+  }
+  .game-container .game-board .box {
+    font-weight: 500;
+    font-size: 6rem;
+    font-family: 'Gluten', sans-serif;
+  }
+  .game-container .game-result #winnertext {
+    /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
+    font-family: 'Gluten', sans-serif;
+  }
+  .game-container .game-result .winner-wrapper #winner{
+    font-family: 'Gluten', sans-serif;
+    font-size: 6rem;
   }
 }

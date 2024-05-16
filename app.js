@@ -126,14 +126,14 @@ const checkWinner = () => {
 
         (function frame() {
           confetti({
-            particleCount: 6,
+            particleCount: 50,
             angle: 60,
             spread: 55,
             origin: { x: 0 },
             colors: colors,
           });
           confetti({
-            particleCount: 6,
+            particleCount: 50,
             angle: 120,
             spread: 55,
             origin: { x: 1 },
