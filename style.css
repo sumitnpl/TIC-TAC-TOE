@@ -32,7 +32,6 @@ body {
 .hide {
   display: none !important;
 }
-
 .main-container {
   display: flex;
   flex-direction: column;
@@ -49,7 +48,6 @@ body {
   font-weight: 300;
   letter-spacing: 0.7rem;
 }
-
 .game-container {
   display: flex;
   overflow: hidden;
@@ -61,8 +59,8 @@ body {
 }
 .game-container .game-over {
   font-size: 3rem;
-  font-family: 'Mochiy Pop One', cursive;
-  font-weight: 500;
+  font-family: "Roboto", monospace;
+  font-weight: 400;
   color: var(--red-color);
 }
 .game-container .board-container {
@@ -92,12 +90,11 @@ body {
   cursor: pointer;
   transition: all 0.5s ease;
 }
-
 .game-container .game-result {
   display: flex;
   flex-direction: column;
   height: 100%;
-  gap: 10px;
+  gap: 70px;
   align-items: center;
   justify-content: space-between;
 }
@@ -122,7 +119,7 @@ body {
   position: absolute;
   top: 0%;
   left: 50%;
-  font-size: 8rem;
+  font-size: 6rem;
   transform: translate(-50%, -50%);
   font-family: 'Gluten', cursive;
   color: var(--green-color);
@@ -151,6 +148,12 @@ body {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+}
+.active{
+  opacity: 1;
+  visibility: visible;
 }
 .modal-content{
   font-family: "Roboto", sans-serif;
@@ -159,7 +162,6 @@ body {
   font-size: 14px;
   font-weight: 400;
 }
-
 .modal {
   background-color: #ede7e7;
   margin: auto;
@@ -188,13 +190,6 @@ body {
 #modal-close:hover{
   font-weight: 600;
 }
-.btn {
-  padding: 8px 16px;
-  margin: 0 5px;
-  cursor: pointer;
-  border: none;
-  border-radius: 3px;
-}
 #modal-toggle{
   position: absolute;
   cursor: pointer;
@@ -203,9 +198,6 @@ body {
   bottom: 0;
   margin: 30px;
 }
-
-
-
 
 @media screen and (max-width: 768px) {
   .main-container {
@@ -219,14 +211,11 @@ body {
     height: 45vh;
     width: 45vh;
   }
-  .game-container #game-over {
+  .game-container #game-over, .game-container .game-result #winnertext {
     font-size: 2.5rem;
   }
   .game-container .game-board .box {
     font-size: 1.5rem;
-  }
-  .game-container .game-result #winnertext {
-    font-size: 2.5rem;
   }
   .game-container .game-result .winner-wrapper #winner {
     font-size: 6rem;
@@ -240,20 +229,30 @@ body {
     font-size: 2.8rem;
     letter-spacing: 0.5rem;
   }
+  .game-container .game-over {
+    font-size: 2.5rem;
+    text-transform: capitalize;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    color: var(--red-color);
+  }
   .game-buttons .fa {
     font-size: 40px;
   }
   .game-container .game-board .box {
     font-weight: 500;
-    font-size: 6rem;
+    font-size: 5.3rem;
     font-family: 'Gluten', sans-serif;
   }
+  .game-container .game-result {
+    gap: 50px;
+  }
   .game-container .game-result #winnertext {
-    /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
     font-family: 'Gluten', sans-serif;
+    font-size: 3rem;
   }
   .game-container .game-result .winner-wrapper #winner{
     font-family: 'Gluten', sans-serif;
-    font-size: 6rem;
+    font-size: 6.4rem;
   }
 }

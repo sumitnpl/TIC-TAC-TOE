@@ -171,7 +171,7 @@ const gameDraw = () => {
   gameOver.classList.remove('hide');
   gameBoard.classList.add('hide');
   gameResult.classList.add('hide');
-  gameOver.innerText = `Game was draw`;
+  gameOver.innerText = 'Game was draw';
 };
 
 // Get modal elements
@@ -194,7 +194,6 @@ function closeModal() {
 // Event listeners
 modalClose.addEventListener('click', closeModal);
 mainContainer.addEventListener('click', closeModal);
-
 
 modalToggle.addEventListener('click', function(event) {
   // Prevent the click event from bubbling up to the window
