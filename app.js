@@ -1,12 +1,12 @@
 const root = document.documentElement;
 let toggle = document.querySelector('#toggle-btn');
+let mainContainer = document.querySelector('.main-container');
 let darkTheme = false;
 let resetBtn = document.querySelector('#reset-btn');
 let gameBoard = document.querySelector('.board-container');
 let gameOver = document.querySelector('.game-over');
 let gameResult = document.querySelector('.game-result');
 let boxes = document.querySelectorAll('.box');
-
 let trophy = document.querySelector('#trophy');
 let msg = document.querySelector('#winner');
 let timezoner = document.querySelector('#timehere');
@@ -71,25 +71,6 @@ toggle.addEventListener(
       toggle.classList.add('fa-toggle-off');
       darkTheme = true;
     }
-    // if (!isBlack) {
-    //   isBlack = true;
-    //   toggle.style.color = '#C2CCCE';
-    //   body.style.background = '#333537';
-    //   head.style.color = 'white';
-    //   boxes.forEach((box) => {
-    //     box.classList.add('toggle');
-    //   });
-    // } else {
-    //   // for day
-    //   body.style.background = '#f8f7fe';
-    //   head.style.color = 'black';
-    //   isBlack = false;
-    //   toggle.style.color = '#C2CCCE';
-    //   hour = 8;
-    //   boxes.forEach((box) => {
-    //     box.classList.remove('toggle');
-    //   });
-    // }
   },
   3000
 );
@@ -193,13 +174,10 @@ const gameDraw = () => {
   gameOver.innerText = `Game was draw`;
 };
 
-
-
 // Get modal elements
 const modalContainer = document.getElementById('modal-container');
 const modalToggle = document.getElementById('modal-toggle');
 const modalClose = document.getElementById('modal-close');
-const modalCloseBtn = document.getElementById('modal-close-btn');
 
 // Function to open modal
 function openModal() {
@@ -214,21 +192,14 @@ function closeModal() {
 }
 
 // Event listeners
-modalToggle.addEventListener('click', openModal);
 modalClose.addEventListener('click', closeModal);
-modalCloseBtn.addEventListener('click', closeModal);
+mainContainer.addEventListener('click', closeModal);
 
-window.addEventListener('click', function(event) {
-  // Check if the click event target is within the window's inner width
-  if (event.target <= window.innerWidth) {
-      closeModal();
-  }
+
+modalToggle.addEventListener('click', function(event) {
+  // Prevent the click event from bubbling up to the window
+  event.stopPropagation();
+  openModal();
 });
 
 
-// Close modal when clicking outside of it
-window.addEventListener('click', function(event) {
-    if (event.target === modalContainer) {
-        closeModal();
-    }
-});
