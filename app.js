@@ -1,6 +1,6 @@
 const root = document.documentElement;
 let toggle = document.querySelector('#toggle-btn');
-let darkTheme = true;
+let darkTheme = false;
 let resetBtn = document.querySelector('#reset-btn');
 let gameBoard = document.querySelector('.board-container');
 let gameOver = document.querySelector('.game-over');
@@ -14,6 +14,9 @@ let winnerText = document.querySelector('#winnertext');
 let head = document.querySelector('#headin');
 let turnO = true; //playerX, playerO
 let count = 0; //To Track Draw
+
+
+let d = new Date();
 
 // Theme Toggle
 toggle.addEventListener(
@@ -157,3 +160,43 @@ const gameDraw = () => {
   gameResult.classList.add('hide');
   gameOver.innerText = `Game was draw`;
 };
+
+
+
+// Get modal elements
+const modalContainer = document.getElementById('modal-container');
+const modalToggle = document.getElementById('modal-toggle');
+const modalClose = document.getElementById('modal-close');
+const modalCloseBtn = document.getElementById('modal-close-btn');
+
+// Function to open modal
+function openModal() {
+    modalContainer.style.display = 'flex';
+    modalContainer.classList.add('active');
+}
+
+// Function to close modal
+function closeModal() {
+    modalContainer.style.display = 'none';
+    modalContainer.classList.remove('active'); 
+}
+
+// Event listeners
+modalToggle.addEventListener('click', openModal);
+modalClose.addEventListener('click', closeModal);
+modalCloseBtn.addEventListener('click', closeModal);
+
+window.addEventListener('click', function(event) {
+  // Check if the click event target is within the window's inner width
+  if (event.target <= window.innerWidth) {
+      closeModal();
+  }
+});
+
+
+// Close modal when clicking outside of it
+window.addEventListener('click', function(event) {
+    if (event.target === modalContainer) {
+        closeModal();
+    }
+});
