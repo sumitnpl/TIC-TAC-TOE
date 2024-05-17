@@ -256,3 +256,23 @@ body {
     font-size: 6.4rem;
   }
 }
+@media only screen and (max-height: 700px) {
+  .main-container .game-title {
+    font-size: 2.0rem;
+    letter-spacing: 0.5rem;
+  }
+  .game-container .game-board .box {
+    font-size: 4.0rem;
+  }
+  .game-container .game-result #winnertext {
+    font-size: 2.6rem;
+  }
+  .game-container .game-result .winner-wrapper #winner{
+    font-size: 5.8rem;
+  }
+  .game-container .game-over {
+    font-size: 2.3rem;
+    font-weight: 400;
+  }
+
+}
